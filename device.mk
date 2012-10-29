@@ -87,6 +87,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     gps.shooter
 
+# WiMAX support
+PRODUCT_PACKAGES += \
+	CMWimaxSettings
+
 ## dsp Audio
 PRODUCT_COPY_FILES += \
     device/htc/shooter/dsp/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \
