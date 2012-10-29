@@ -16,8 +16,24 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# common msm8660 configs
+# Files which override msm8660
+
+## New Adreno Drivers
+PRODUCT_COPY_FILES += \
+    device/htc/shooter/firmware/a225_pfp.fw:system/etc/firmware/a225_pfp.fw \
+    device/htc/shooter/firmware/a225_pm4.fw:system/etc/firmware/a225_pm4.fw \
+    device/htc/shooter/firmware/a225p5_pm4.fw:system/etc/firmware/a225p5_pm4.fw \
+    device/htc/shooter/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
+    device/htc/shooter/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
+    device/htc/shooter/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
+    device/htc/shooter/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw \
+    device/htc/shooter/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw
+
+
+# common msm8660 configs - ignoring property overrides
+IGNORE_MSM8660_PROPERTIES := $(PRODUCT_PROPERTY_OVERRIDES)
 $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
+PRODUCT_PROPERTY_OVERRIDES := $(IGNORE_MSM8660_PROPERTIES)
 
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
@@ -36,15 +52,6 @@ PRODUCT_COPY_FILES += \
     device/htc/shooter/init.shooter.rc:root/init.shooter.rc \
     device/htc/shooter/init.shooter.usb.rc:root/init.shooter.usb.rc \
     device/htc/shooter/ueventd.shooter.rc:root/ueventd.shooter.rc
-
-## New Adreno Drivers
-PRODUCT_COPY_FILES += \
-    device/htc/shooter/firmware/a225_pfp.fw:system/etc/firmware/a225_pfp.fw \
-    device/htc/shooter/firmware/a225_pm4.fw:system/etc/firmware/a225_pm4.fw \
-    device/htc/shooter/firmware/a225p5_pm4.fw:system/etc/firmware/a225p5_pm4.fw \
-    device/htc/shooter/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
-    device/htc/shooter/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
-    device/htc/shooter/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw
 
 ## We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -105,9 +112,11 @@ PRODUCT_COPY_FILES += \
     device/htc/shooter/dsp/soundimage/srsfx_trumedia_movie.cfg:system/etc/soundimage/srsfx_trumedia_movie.cfg \
     device/htc/shooter/dsp/soundimage/srsfx_trumedia_music.cfg:system/etc/soundimage/srsfx_trumedia_music.cfg
 
-# Custom media config for HTC camera
+# Custom media config
 PRODUCT_COPY_FILES += \
-    device/htc/shooter/configs/media_profiles.xml:system/etc/media_profiles.xml
+     device/htc/shooter/configs/media_profiles.xml:system/etc/media_profiles.xml \
+     device/htc/shooter/configs/media_codecs.xml:system/etc/media_codecs.xml \
+     device/htc/shooter/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # keylayouts
 PRODUCT_COPY_FILES += \
@@ -161,26 +170,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.cdma.home.operator.numeric=310120 \
 	ro.cdma.home.operator.alpha=Sprint
 
-## WiMAX
-PRODUCT_COPY_FILES += \
-    device/htc/shooter/prebuilt/libcryp98.so:system/lib/libcryp98.so \
-    device/htc/shooter/prebuilt/libdmtree.so:system/lib/libdmtree.so \
-    device/htc/shooter/prebuilt/sequansd:system/bin/sequansd \
-    device/htc/shooter/prebuilt/wimax-api.jar:system/framework/wimax-api.jar \
-    device/htc/shooter/prebuilt/wimaxDumpKmsg:system/bin/wimaxDumpKmsg \
-    device/htc/shooter/prebuilt/wimaxDumpLogcat:system/bin/wimaxDumpLogcat \
-    device/htc/shooter/prebuilt/setWiMAXPropDaemond:system/bin/setWiMAXPropDaemond \
-    device/htc/shooter/prebuilt/wimax_mtd:system/bin/wimax_mtd \
-    device/htc/shooter/prebuilt/getWiMAXPropDaemond:system/bin/getWiMAXPropDaemond \
-    device/htc/shooter/prebuilt/wimaxDumpLastKmsg:system/bin/wimaxDumpLastKmsg \
-    device/htc/shooter/prebuilt/wimaxDhcpRenew:system/bin/wimaxDhcpRenew \
-    device/htc/shooter/prebuilt/wimaxDhcpRelease:system/bin/wimaxDhcpRelease \
-    device/htc/shooter/prebuilt/wimaxAddRoute:system/bin/wimaxAddRoute \
-    device/htc/shooter/prebuilt/wimaxFactoryReset:system/bin/wimaxFactoryReset \
-    device/htc/shooter/prebuilt/wimaxConfigInterface:system/bin/wimaxConfigInterface \
-    device/htc/shooter/prebuilt/DefaultTree.xml:system/etc/wimax/sequansd/DefaultTree.xml \
-    device/htc/shooter/prebuilt/sequansd_app.xml:system/etc/wimax/sequansd/sequansd_app.xml \
-    device/htc/shooter/prebuilt/wimaxDhcp.conf:system/etc/wimax/dhcp/wimaxDhcp.conf \
-    device/htc/shooter/prebuilt/libhtcdm.so:system/lib/libhtcdm.so \
-    device/htc/shooter/prebuilt/dmagent:system/bin/dmagent \
-    device/htc/shooter/prebuilt/wimaxDaemon:system/bin/wimaxDaemon
