@@ -7,7 +7,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 $(call inherit-product, vendor/cm/config/cdma.mk)
 
 # Inherit WiMAX stuff
-$(call inherit-product, vendor/cm/config/wimax.mk)
+# $(call inherit-product, vendor/cm/config/wimax.mk)
 
 PRODUCT_RELEASE_NAME := shooter
 
