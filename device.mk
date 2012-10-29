@@ -89,7 +89,7 @@ PRODUCT_PACKAGES += \
 
 # WiMAX support
 PRODUCT_PACKAGES += \
-	CMWimaxSettings
+    CMWimaxSettings
 
 ## dsp Audio
 PRODUCT_COPY_FILES += \
