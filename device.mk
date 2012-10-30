@@ -156,14 +156,36 @@ PRODUCT_COPY_FILES += device/htc/shooter/configs/thermald.conf:system/etc/therma
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Broadcom Network Firmware
-PRODUCT_COPY_FILES += \
-    device/htc/shooter/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
-    device/htc/shooter/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
 # misc
 PRODUCT_COPY_FILES += \
-    device/htc/shooter/vold.fstab:system/etc/vold.fstab \
-    device/htc/shooter/apns-conf.xml:system/etc/apns-conf.xml
+    device/htc/shooter/vold.fstab:system/etc/vold.fstab
+
+## WiMAX
+PRODUCT_COPY_FILES += \
+    device/htc/shooter/prebuilt/libcryp98.so:system/lib/libcryp98.so \
+    device/htc/shooter/prebuilt/libdmtree.so:system/lib/libdmtree.so \
+    device/htc/shooter/prebuilt/sequansd:system/bin/sequansd \
+    device/htc/shooter/prebuilt/wimax-api.jar:system/framework/wimax-api.jar \
+    device/htc/shooter/prebuilt/wimaxDumpKmsg:system/bin/wimaxDumpKmsg \
+    device/htc/shooter/prebuilt/wimaxDumpLogcat:system/bin/wimaxDumpLogcat \
+    device/htc/shooter/prebuilt/setWiMAXPropDaemond:system/bin/setWiMAXPropDaemond \
+    device/htc/shooter/prebuilt/wimax_mtd:system/bin/wimax_mtd \
+    device/htc/shooter/prebuilt/getWiMAXPropDaemond:system/bin/getWiMAXPropDaemond \
+    device/htc/shooter/prebuilt/wimaxDumpLastKmsg:system/bin/wimaxDumpLastKmsg \
+    device/htc/shooter/prebuilt/wimaxDhcpRenew:system/bin/wimaxDhcpRenew \
+    device/htc/shooter/prebuilt/wimaxDhcpRelease:system/bin/wimaxDhcpRelease \
+    device/htc/shooter/prebuilt/wimaxAddRoute:system/bin/wimaxAddRoute \
+    device/htc/shooter/prebuilt/wimaxFactoryReset:system/bin/wimaxFactoryReset \
+    device/htc/shooter/prebuilt/wimaxConfigInterface:system/bin/wimaxConfigInterface \
+    device/htc/shooter/prebuilt/DefaultTree.xml:system/etc/wimax/sequansd/DefaultTree.xml \
+    device/htc/shooter/prebuilt/sequansd_app.xml:system/etc/wimax/sequansd/sequansd_app.xml \
+    device/htc/shooter/prebuilt/wimaxDhcp.conf:system/etc/wimax/dhcp/wimaxDhcp.conf \
+    device/htc/shooter/prebuilt/libhtcdm.so:system/lib/libhtcdm.so \
+    device/htc/shooter/prebuilt/dmagent:system/bin/dmagent \
+    device/htc/shooter/prebuilt/wimaxDaemon:system/bin/wimaxDaemon \
+    device/htc/shooter/prebuilt/libwimaxjni.so:system/lib/libwimaxjni.so
 
 ## htc audio settings
 $(call inherit-product, device/htc/shooter/media_htcaudio.mk)
