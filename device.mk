@@ -68,6 +68,7 @@ PRODUCT_COPY_FILES += \
 
 ## (2) Also get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/shooter/shooter-vendor.mk)
+$(call inherit-product, vendor/qcom/proprietary/qcom-vendor.mk)
 
 ## misc
 PRODUCT_PROPERTY_OVERRIDES += \
