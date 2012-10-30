@@ -80,19 +80,8 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 5242880
 BOARD_FLASH_BLOCK_SIZE := 262144
 
 ## Kernel Details
-TARGET_KERNEL_CONFIG := shooter_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_shooter_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/shooter
-TARGET_PREBUILT_KERNEL := device/htc/shooter/prebuilt/zImage
-
-TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-TARGET_RECOVERY_UI_LIB := librecovery_ui_shooter
-TARGET_RECOVERY_INITRC := device/htc/shooter/recovery/init.rc
-BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
-BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
-BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
-BOARD_USES_MMCUTILS := true
-BOARD_HAS_NO_MISC_PARTITION := true
-BOARD_HAS_NO_SELECT_BUTTON := true
 
 TARGET_ARCH_VARIANT_CPU := cortex-a9
 
