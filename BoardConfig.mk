@@ -125,8 +125,21 @@ TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
 
 # Wifi
-WIFI_DRIVER_MODULE_NAME          := bcmdhd
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
+WIFI_BAND                        := 802_11_ABG
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
+BOARD_HOSTAPD_DRIVER             := WEXT
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_wext
+BOARD_WLAN_DEVICE                := bcm4329
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcm4329.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcm4329_apsta.bin"
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcm4329/parameters/firmware_path"
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcm4329.ko"
+WIFI_DRIVER_MODULE_NAME          := "bcm4329"
+WIFI_DRIVER_MODULE_ARG           := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration iface_name=wlan"
+BOARD_WLAN_DEVICE_REV            := bcm4329
+BOARD_LEGACY_NL80211_STA_EVENTS  := true
 
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
