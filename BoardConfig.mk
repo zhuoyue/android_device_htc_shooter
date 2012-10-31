@@ -28,8 +28,6 @@
 
 USE_CAMERA_STUB := true
 
--include vendor/htc/shooter/BoardConfigVendor.mk
-
 # inherit from common msm8660
 -include device/htc/msm8660-common/BoardConfigCommon.mk
 
