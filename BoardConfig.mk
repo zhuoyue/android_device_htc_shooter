@@ -25,6 +25,9 @@
 # against the traditional rules of inheritance).
 
 # inherit from the proprietary version
+
+USE_CAMERA_STUB := true
+
 -include vendor/htc/shooter/BoardConfigVendor.mk
 
 # inherit from common msm8660
