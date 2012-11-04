@@ -36,6 +36,6 @@ $(call inherit-product, device/htc/shooter/device.mk)
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := full_shooter
 PRODUCT_DEVICE := shooter
-PRODUCT_BRAND := HTC
+PRODUCT_BRAND := sprint
 PRODUCT_MANUFACTURER := HTC
-PRODUCT_MODEL := Evo 3D CDMA
+PRODUCT_MODEL := PG8600
