@@ -34,8 +34,6 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/htc/shooter/BoardConfigVendor.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/htc/shooter/include
-
 TARGET_BOOTLOADER_BOARD_NAME := shooter
 
 BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=shooter no_console_suspend=1
