@@ -80,7 +80,6 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 
 ## Kernel Details
 TARGET_KERNEL_CONFIG := cyanogenmod_shooter_defconfig
-TARGET_KERNEL_SOURCE := kernel/htc/shooter
 
 TARGET_ARCH_VARIANT_CPU := cortex-a9
 
