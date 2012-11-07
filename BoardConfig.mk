@@ -81,8 +81,6 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 ## Kernel Details
 TARGET_KERNEL_CONFIG := cyanogenmod_shooter_defconfig
 
-TARGET_ARCH_VARIANT_CPU := cortex-a9
-
 # Scorpion optimizations
 TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
 TARGET_USE_SCORPION_PLD_SET := true
@@ -146,6 +144,3 @@ TARGET_SCREEN_WIDTH := 540
 
 # Custom LUN File Path
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
-
-TARGET_EXTRA_CFLAGS += $(call cc-option,-mtune=cortex-a9,$(call cc-option,-mtune=cortex-a8)) $(call cc-option,-mcpu=cortex-a9,$(call cc-option,-mcpu=cortex-a8))
-
