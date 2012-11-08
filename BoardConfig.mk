@@ -36,7 +36,7 @@ USE_CAMERA_STUB := true
 
 TARGET_BOOTLOADER_BOARD_NAME := shooter
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=shooter no_console_suspend=1 maxkhz=1512000 minkhz=384000 gov=lagfree maxscroff=486000 3dgpu=320000000 2dgpu=266667000 s2w=2 s2w_start=MENU s2w_end=SEARCH scheduler=deadline
+BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=shooter no_console_suspend=1 maxkhz=1512000 minkhz=384000 gov=lagfree maxscroff=486000 3dgpu=320000000 2dgpu=266667000 s2w=1 s2w_start=MENU s2w_end=SEARCH scheduler=deadline
 BOARD_KERNEL_BASE := 0x48000000
 BOARD_KERNEL_PAGE_SIZE := 2048 
 
