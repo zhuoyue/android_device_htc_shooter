@@ -53,6 +53,10 @@ PRODUCT_COPY_FILES += \
     device/htc/shooter/init.shooter.usb.rc:root/init.shooter.usb.rc \
     device/htc/shooter/ueventd.shooter.rc:root/ueventd.shooter.rc
 
+## Flash Player
+PRODUCT_COPY_FILES += \
+    device/htc/shooter/prebuilt/com.adobe.flashplayer.apk:system/app/com.adobe.flashplayer.apk
+
 ## We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
