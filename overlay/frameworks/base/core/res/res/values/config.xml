@@ -177,6 +177,7 @@
         <item>"wlan\\d"</item>
         <item>tap_brcm_bt_pan</item>
         <item>"bnep\\d"</item>
+	<item>"wlan0"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
