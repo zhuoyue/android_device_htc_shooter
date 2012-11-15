@@ -51,7 +51,8 @@ PRODUCT_COPY_FILES += \
     device/htc/shooter/prebuilt/init:root/init \
     device/htc/shooter/init.shooter.rc:root/init.shooter.rc \
     device/htc/shooter/init.shooter.usb.rc:root/init.shooter.usb.rc \
-    device/htc/shooter/ueventd.shooter.rc:root/ueventd.shooter.rc
+    device/htc/shooter/ueventd.shooter.rc:root/ueventd.shooter.rc \
+    device/htc/shooter/fstab.shooter:root/fstab.shooter
 
 ## Flash Player
 PRODUCT_COPY_FILES += \
