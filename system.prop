@@ -76,3 +76,7 @@ ro.qualcomm.cabl=1
 
 # Engineer ID
 ro.engineerid = 3
+
+# Sleep
+ro.ril.disable.power.collapse=0
+pm.sleep_mode=1
