@@ -90,7 +90,7 @@
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <CamcorderProfiles cameraId="0">
 
-         <EncoderProfile quality="low" fileFormat="mp4" duration="15">
+    	<EncoderProfile quality="low" fileFormat="mp4" duration="15">
 		<Video codec="h264"
                        bitRate="192000"
         	       width="176"
@@ -164,6 +164,18 @@
                    channels="1" />
         </EncoderProfile>
 
+        <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
+            <Video codec="m4v"
+                   bitRate="20000000"
+                   width="1920"
+                   height="1088"
+                   frameRate="31" />
+            <Audio codec="aac"
+                   bitRate="96000"
+                   sampleRate="48000"
+                   channels="1" />
+        </EncoderProfile>
+
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="192000"
@@ -208,6 +220,19 @@
                    bitRate="8000000"
                    width="1280"
                    height="720"
+                   frameRate="31" />
+            <!-- audio setting is ignored -->
+            <Audio codec="aac"
+                   bitRate="96000"
+                   sampleRate="48000"
+                   channels="1" />
+        </EncoderProfile>
+
+        <EncoderProfile quality="timelapse1080p" fileFormat="mp4" duration="30">
+            <Video codec="h264"
+                   bitRate="12000000"
+                   width="1920"
+                   height="1088"
                    frameRate="31" />
             <!-- audio setting is ignored -->
             <Audio codec="aac"
@@ -370,3 +395,4 @@
     -->
     <ExportVideoProfile name="m4v" profile= "16" level="1"/>
 </MediaSettings>
+
