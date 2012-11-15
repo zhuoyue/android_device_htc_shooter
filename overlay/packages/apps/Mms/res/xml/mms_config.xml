@@ -61,4 +61,7 @@
          to indicate default value -->
     <int name="maxMessageTextSize">-1</int>
 
+    <!-- Hide Sprint VVM text messages. -->
+    <bool name="enableSprintVVM">true</bool>
+
 </mms_config>
